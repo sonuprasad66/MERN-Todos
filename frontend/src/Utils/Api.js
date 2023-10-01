@@ -1,0 +1,9 @@
+export const PORT = "https://nirvedha.onrender.com";
+// export const PORT = "http://localhost:8080";
+export const USER_LOGIN = `${PORT}/login`;
+export const USER_SIGNUP = `${PORT}/signup`;
+export const USER_PROFILE = `${PORT}/profile`;
+export const GET_TODO = `${PORT}/todos`;
+export const CREATE_TODO = `${PORT}/create`;
+export const UPDATE_TODO = `${PORT}/update`;
+export const DELETE_TODO = `${PORT}/delete`;
