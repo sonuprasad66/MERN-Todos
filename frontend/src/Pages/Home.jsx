@@ -11,8 +11,8 @@ import {
 import { GetTask } from "../Components/GetTask";
 import { AddTask } from "../Components/AddTask";
 import { useNavigate } from "react-router";
-import { getCompletedStatus, getTodos } from "../Redux/Todos/action";
 import { useDispatch } from "react-redux";
+import { getTodos } from "../Redux/Todos/action";
 
 export const Home = () => {
   const token = localStorage.getItem("token");
@@ -23,12 +23,9 @@ export const Home = () => {
     if (!token) {
       navigate("/login");
     }
-  }, [token, navigate]);
 
-  useEffect(() => {
     dispatch(getTodos(token));
-    dispatch(getCompletedStatus(token));
-  }, []);
+  }, [token, navigate]);
 
   return (
     <>

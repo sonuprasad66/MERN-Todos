@@ -7,8 +7,6 @@ import {
   UPDATE_TODO,
 } from "../../Utils/Api";
 
-const token = localStorage.getItem("token");
-
 export const getTodos = (token) => (dispatch) => {
   dispatch({ type: types.GET_TODOS_REQUEST });
   return axios
@@ -28,6 +26,8 @@ export const getTodos = (token) => (dispatch) => {
 };
 
 export const addTodos = (payload) => (dispatch) => {
+  const token = localStorage.getItem("token");
+  console.log(token);
   dispatch({ type: types.ADD_TODOS_REQUEST });
   return axios
     .post(
@@ -51,6 +51,7 @@ export const addTodos = (payload) => (dispatch) => {
 export const updateTodos =
   ({ todoId, status, title }) =>
   (dispatch) => {
+    const token = localStorage.getItem("token");
     dispatch({ type: types.UPDATE_TODOS_REQUEST });
     return axios
       .patch(
@@ -73,6 +74,7 @@ export const updateTodos =
   };
 
 export const deleteTodos = (todoId) => (dispatch) => {
+  const token = localStorage.getItem("token");
   dispatch({ type: types.DELETE_TODOS_REQUEST });
 
   return axios
@@ -80,10 +82,12 @@ export const deleteTodos = (todoId) => (dispatch) => {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((res) => {
+      console.log("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", res);
+
       return dispatch({ type: types.DELETE_TODOS_SUCCESS, payload: res.data });
     })
     .catch((err) => {
-      console.log(err);
+      console.log("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", err);
       return dispatch({ type: types.DELETE_TODOS_FAILURE, payload: err });
     });
 };

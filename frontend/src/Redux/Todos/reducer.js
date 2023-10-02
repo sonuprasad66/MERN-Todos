@@ -3,11 +3,8 @@ import * as types from "./actionTypes";
 const initialState = {
   todos: [],
   completedStatus: [],
-  token: null,
-  currentUser: {},
   isLoading: false,
   isError: false,
-  isAuth: false,
 };
 
 export const reducer = (state = initialState, action) => {
