@@ -26,8 +26,8 @@
 
 ==> Getting Started
 
-- Onlive server you can go with this API.
-  --> Backend: https://dpdzero.onrender.com/
+- On the live server, you can go with this API.
+  --> Backend: https://nirvedha.onrender.com
   --> Frontend: https://sonu-todos.vercel.app/
 
 (A) Environment Setup
